@@ -18,8 +18,8 @@ require('./sockets/socket');
 const pathName=path.resolve(__dirname,'public');
 
 app.use(express.static(pathName));
-
-server.listen(process.env.PORT,(err)=>{
+const puerto=process.env.PORT || 8000 ;
+server.listen(puerto,(err)=>{
     if(err)throw new Error(err);
-    console.log('Servidor Corriendo en el Puerto ',process.env.PORT);
+    console.log('Servidor Corriendo en el Puerto ',puerto);
 });
